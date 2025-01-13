@@ -27,7 +27,7 @@ def read_csv_and_publish(csv_file, pub):
         gnss_raw_array.header.frame_id = ''
         while True:
             
-            rows = [next(reader, None) for _ in range(20)]
+            rows = [next(reader, None) for _ in range(26)]
             print("Read rows: {}".format(rows))  # Print the content of rows for debugging
             if rows[0] is None:
                 break
@@ -63,10 +63,11 @@ def read_csv_and_publish(csv_file, pub):
                     gnss_raw.sat_system = rows[17][0]
                     gnss_raw.visable3DMA = int(rows[18][0])
                     gnss_raw.prE3dMA = float(rows[19][0])
+
                     gnss_raw_array.GNSS_Raws.append(gnss_raw)
                     sv_count += 1
                     if sv_count< total_sv_init-1:
-                        rows = [next(reader, None) for _ in range(20)]
+                        rows = [next(reader, None) for _ in range(26)]
                     else:
                         # Publish the previous GNSS_Raw_Array message
                         pub.publish(gnss_raw_array)

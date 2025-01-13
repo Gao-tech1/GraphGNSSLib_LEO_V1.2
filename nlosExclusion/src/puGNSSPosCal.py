@@ -23,7 +23,8 @@ import llh2ecef # llh to ecef
 import ecef2llh #ecef coordinate to llh coordinate
 from nlosExclusion.msg import Satellite_Info # customized ros message type Satellite_Info containing satellites exclusion numbers
 import rospy
-from novatel_msgs.msg import BESTPOS
+#from novatel_msgs.msg import BESTPOS
+from novatel_oem7_msgs.msg import BESTPOS
 
 class GNSSPosCal():
     def __init__(self):

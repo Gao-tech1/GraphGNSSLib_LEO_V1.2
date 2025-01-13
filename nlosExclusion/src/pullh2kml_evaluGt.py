@@ -15,7 +15,8 @@ import rospy
 from pykml.factory import KML_ElementMaker as KML #使用factory模块
 import csv # csv reading needed library
 # import pandas as pd
-from novatel_msgs.msg import BESTPOS
+# from novatel_msgs.msg import BESTPOS
+from novatel_oem7_msgs.msg import BESTPOS
 
 class pullh2kml_eval():
     def __init__(self):

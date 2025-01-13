@@ -32,8 +32,10 @@ from geometry_msgs.msg import Quaternion, Point, Pose, Twist,PoseArray # ros mes
 from PyQt4 import QtCore, QtGui
 import puGNSSPosCal
 import time
-from novatel_msgs.msg import INSPVAX
-from novatel_msgs.msg import BESTPOS
+# from novatel_msgs.msg import INSPVAX
+# from novatel_msgs.msg import BESTPOS
+from novatel_oem7_msgs.msg import BESTPOS
+from novatel_oem7_msgs.msg import INSPVAX
 import llh2ecef # llh to ecef
 import ecef2llh #ecef coordinate to llh coordinate
 

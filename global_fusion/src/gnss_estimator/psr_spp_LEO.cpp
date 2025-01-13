@@ -128,7 +128,11 @@ public:
                 est_pseudorange = est_pseudorange - state[3];
             }
             
-            else 
+            else if (sat_sys == "Starlink")
+            {
+                est_pseudorange = est_pseudorange;
+            }
+            else
             {
                 est_pseudorange = est_pseudorange - state[4];
             }
@@ -170,7 +174,10 @@ public:
             {
                 est_pseudorange = est_pseudorange - state[keyIndex][3];
             }
-            
+            else if (sat_sys == "Starlink")
+            {
+                est_pseudorange = est_pseudorange;
+            }
             else 
             {
                 est_pseudorange = est_pseudorange - state[keyIndex][4];
@@ -409,7 +416,7 @@ int main(int argc, char **argv)
     FLAGS_logtostderr = 1;  // output to console
     google::InitGoogleLogging(argv[0]); // init the google logging
     // google::ParseCommandLineFlags(&argc, &argv, true); // parseCommandLineFlags 
-    ros::init(argc, argv, "psr_spp_node");  
+    ros::init(argc, argv, "psr_spp_LEO_node");  
     ROS_INFO("\033[1;32m----> psr_spp_node (solve WLS using Ceres-solver) Started.\033[0m");
     gnssSinglePointPositioning gnssSinglePointPositioning;
     ros::spin();

@@ -40,7 +40,8 @@
 // ros
 #include <ros/ros.h>
 /* Reference from NovAtel GNSS/INS */
-#include <novatel_msgs/INSPVAX.h> // novatel_msgs/INSPVAX
+// #include <novatel_msgs/INSPVAX.h>
+#include <novatel_oem7_msgs/INSPVAX.h> // novatel_msgs/INSPVAX
 #include "gnss_tools.h"
 #include <nlosExclusion/GNSS_Raw_Array.h>
 
@@ -140,7 +141,7 @@ public:
         pub_fgo_llh = nh.advertise<sensor_msgs::NavSatFix>("fgo_llh", 100);
 
         gnss_raw_array_sub.reset(new message_filters::Subscriber<nlosExclusion::GNSS_Raw_Array>(nh, "/gnss_preprocessor_node/GNSSPsrCarRov1", 10000));
-        gnss_raw_array_sub.reset(new message_filters::Subscriber<nlosExclusion::GNSS_Raw_Array>(nh, "/gnss_preprocessor_node/LEOPsrCarRov1", 10000));
+       // gnss_raw_array_sub.reset(new message_filters::Subscriber<nlosExclusion::GNSS_Raw_Array>(nh, "/gnss_preprocessor_node/LEOPsrCarRov1", 10000));
         doppler_sub.reset(new message_filters::Subscriber<nav_msgs::Odometry>(nh, "/gnss_preprocessor_node/GNSSDopVelRov1", 10000));
         syncdoppler2GNSSRaw.reset(new message_filters::TimeSynchronizer<nlosExclusion::GNSS_Raw_Array, nav_msgs::Odometry>(*gnss_raw_array_sub, *doppler_sub, 10000));
 

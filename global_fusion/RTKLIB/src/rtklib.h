@@ -1705,7 +1705,11 @@ extern int lambda(int n, int m, const double *a, const double *Q, double *F,
 extern int pntpos(const obsd_t *obs, int n, const nav_t *nav,
                   const prcopt_t *opt, sol_t *sol, double *azel,
                   ssat_t *ssat, char *msg);
-
+// add by Yixin
+/* standard positioning ------------------------------------------------------*/
+extern int pntpos_LEO(const double* doppler_shifts, const double* lambdas,
+                      int n, const double *rs, const double *dts, const double *rr,
+                      const double *azel, const int *vsat);
 /* precise positioning -------------------------------------------------------*/
 extern void rtkinit(rtk_t *rtk, const prcopt_t *opt);
 extern void rtkfree(rtk_t *rtk);

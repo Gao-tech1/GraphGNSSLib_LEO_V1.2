@@ -44,6 +44,11 @@ include_directories(
 
 catkin_package()
 
+include_directories(
+  ${catkin_INCLUDE_DIRS}
+  ${CERES_INCLUDE_DIRS}
+)
+
 # add rtklib
 add_library(convkml RTKLIB/src/convkml.c)
 add_library(convrnx RTKLIB/src/convrnx.c)

@@ -1,8 +1,10 @@
 import math
 from math import pi, sqrt, sin, tan, cos, atan2
 import rospy #ros python needed
-from novatel_msgs.msg import BESTPOS
-from novatel_msgs.msg import INSPVAX
+#from novatel_msgs.msg import BESTPOS
+#from novatel_msgs.msg import INSPVAX
+from novatel_oem7_msgs.msg import BESTPOS
+from novatel_oem7_msgs.msg import INSPVAX
 
 from sensor_msgs.msg   import Imu # standard message type for GNSSs
 from nav_msgs.msg import Odometry
